@@ -1,0 +1,72 @@
+[
+    {
+      "script": "{d ɛ ɾ} {v eː ts ˈiː ɾ} {n ˈɑː m} { ˈa l ə s,} {v ˈa s} { iː m} {d ɛ ɾ} {k ˈøː n ɪ ç} {ɡ ˈɑː p,} {d ?? ç v ˈa n d ɜ t ə} {d iː} {v ˈy s t ə} { ɪ n} {d ɛ ɾ} {l ˈɛ ŋ ə} { ʊ n t} { ɪ n} {d ɛ ɾ} {b ɾ ˈaɪ t ə,} {b ɪ s} { ɛ ɾ} { ɪ n} {d a s} {l ˈa n t} {d ɛ s} {k ˈøː n ɪ ç s} {ʃ ˈɑ m ɛ ç} {k ˌɑː m.}",
+      "spk_id": "hui-berndungerer",
+      "decoder_spk_id": "hui-berndungerer",
+      "duration_spk_id": "hui-berndungerer",
+      "energy_spk_id": "hui-berndungerer",
+      "f0_spk_id": "hui-berndungerer",
+      "language": "de_DE",
+      "emotion": "other"
+    },
+    {
+      "script": "{ʈ ˈɪ h ə ɾ ˌi} {b ˈã dʰ} {b ˈʌ n n ˌeː} {k eː} {d ɔː ɾ ˈaː n} {s ˈʌ n t oː} {n ˈeː} {ʋ ɪ ɾ ˈoː dʰ} {ɟ ə ɾ ˈuː ɾ} {k ˈɪ j aː} {l ˈeː k ɪ n} {pʰ ˈɪ ɾ} {tʰ ˈʌ m} {ɡ ˈʌ eː}",
+      "spk_id": "indic-iiit-hyd-female",
+      "decoder_spk_id": "indic-iiit-hyd-female",
+      "duration_spk_id": "indic-iiit-hyd-female",
+      "energy_spk_id": "indic-iiit-hyd-female",
+      "f0_spk_id": "indic-iiit-hyd-female",
+      "language": "hi_HI",
+      "emotion": "other"
+    },
+    {
+      "script": "{m ˈɪ s t ɚ.} {s t ˈɜː dʒ ᵻ z} {b ˈoːɹ n,} {s ˌɜː} {dʒ ˈeɪ m z} {m ˈæ k ɪ n t ˌɑː ʃ,} {s ˌɜː} {dʒ ˈeɪ m z} {s k ˈɑːɹ l ɪ t,} {æ n d} {w ˈɪ l j ə m} {w ˈɪ l b ɚ f ˌoːɹ s.}",
+      "spk_id": "ljs",
+      "decoder_spk_id": "ljs",
+      "duration_spk_id": "ljs",
+      "energy_spk_id": "ljs",
+      "f0_spk_id": "ljs",
+      "language": "en_US",
+      "emotion": "other"
+    },
+    {
+      "script": "{b ˈɛ ŋ ɡ a n} {u s t ˈe ð e s} {a k ˈa} {i} {ɾ ɾ e s p ˈo n d a n} {d ˈi x o} {s ˌa n t o ɾ k ˈa θ} {ˌe k s θ i t ˈa n d o} {l a} {k ˌu ɾ j o s i ð ˈa d} {ð e} {s u s} {o j j ˈɛ n t e s.}",
+      "spk_id": "mailabs-tux",
+      "decoder_spk_id": "mailabs-tux",
+      "duration_spk_id": "mailabs-tux",
+      "energy_spk_id": "mailabs-tux",
+      "f0_spk_id": "mailabs-tux",
+      "language": "es_ES",
+      "emotion": "other"
+    },
+    {
+      "script": "{e} {l a-} {t ʁ ˈa s} {d e-} {p l ˈœ ʁ z} {i} {f ə z ˈɛ} {d e-} {l ˈi n j} {d ɑ̃} {l a-} {k ˈu ʃ} {d ə-} {p u s j ˈɛ ʁ} {k i} {l a-} {s a l i s ˈɛ.}",
+      "spk_id": "mailabs-nadineeckert",
+      "decoder_spk_id": "mailabs-nadineeckert",
+      "duration_spk_id": "mailabs-nadineeckert",
+      "energy_spk_id": "mailabs-nadineeckert",
+      "f0_spk_id": "mailabs-nadineeckert",
+      "language": "fr_FR",
+      "emotion": "other"
+    },
+    {
+      "script": "{l e} {ˈi s e} {β ˈe ɾ} {k e} {m i} {p ˈo k a} {ɾ ɾ ˌe f l e k s j ˈo n} {n ˈo} {ð e β ˈi a} {s ˈe r} {m o t ˈi β o} {ð e} {ð i s ɣ ˈu s t o,}",
+      "spk_id": "mailabs-karensavage",
+      "decoder_spk_id": "mailabs-karensavage",
+      "duration_spk_id": "mailabs-karensavage",
+      "energy_spk_id": "mailabs-karensavage",
+      "f0_spk_id": "mailabs-karensavage",
+      "language": "es_MX",
+      "emotion": "other"
+    },
+    {
+      "script": "{p ˈeɪ ŋ s æ s y} {k y} {a} {ˈa z m æ} {t ˈe ɲ æ} {ˌo ɾ ˈi ʒ eɪ ŋ} {n ˌu m æ} {k ˌo ŋ ʒ u ɡ a s ˈɐ̃ʊ̃} {dʒ y} {f ˌa t ˈo ɾ y z} {ʒ ˌe n ˈɛ tʃ i k ʊ z} {i} {ˌɐ̃ m b i eɪ ŋ t ˈaɪ s.}",
+      "spk_id": "ED",
+      "decoder_spk_id": "ED",
+      "duration_spk_id": "ED",
+      "energy_spk_id": "ED",
+      "f0_spk_id": "ED",
+      "language": "pt_BR",
+      "emotion": "other"
+    }
+]

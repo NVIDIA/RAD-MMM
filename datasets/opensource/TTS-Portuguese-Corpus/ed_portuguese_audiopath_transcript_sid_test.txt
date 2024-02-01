@@ -1,0 +1,35 @@
+wav_filename|wav_filesize|transcript|speaker_name|transcript|speaker_name
+sample-5672.wav|A juventude tinha que revolucionar a escola|ED
+sample-5655.wav|A inauguração da vila é quarta ou quinta-feira|ED
+sample-5656.wav|Vote se você tiver o título de eleitor|ED
+sample-5755.wav|A inauguração da vila é quarta ou quinta-feira.|ED
+sample-5659.wav|Em muitas cidades a população está diminuindo.|ED
+sample-5673.wav|A cantora terá quatro meses para ensaiar seu canto|ED
+sample-5666.wav|O ministério mudou demais com a eleição|ED
+sample-5657.wav|Hoje é fundamental encontrar a razão da existência humana|ED
+sample-5665.wav|A Amazônia é a reserva ecológica do globo|ED
+sample-5671.wav|Espere seu amigo em casa|ED
+sample-5756.wav|Vote se você tiver o título de eleitor.|ED
+sample-5757.wav|Hoje é fundamental encontrar a razão da existência humana.|ED
+sample-5670.wav|A principal personagem no filme é uma gueixa|ED
+sample-5664.wav|Sua sensibilidade mostrará o caminho|ED
+sample-5830.wav|A principal personagem no filme é uma gueixa.|ED
+sample-5760.wav|Nunca se deve ficar em cima do morro.|ED
+sample-5660.wav|Nunca se deve ficar em cima do morro|ED
+sample-5825.wav|A Amazônia é a reserva ecológica do globo.|ED
+sample-5826.wav|O ministério mudou demais com a eleição.|ED
+sample-5663.wav|Eu finjo me banhar num lago ao amanhecer|ED
+sample-5831.wav|Espere seu amigo em casa.|ED
+sample-5661.wav|Para as pessoas estranhas o panorama é desolador|ED
+sample-5662.wav|É bom te ver colhendo flores menino|ED
+sample-5668.wav|O capital de uma empresa depende de sua produção|ED
+sample-5761.wav|Para as pessoas estranhas o panorama é desolador.|ED
+sample-5674.wav|Esse tema foi falado no congresso.|ED
+sample-5763.wav|Eu finjo me banhar num lago ao amanhecer.|ED
+sample-5758.wav|A temperatura é mais amena à noite.|ED
+sample-5827.wav|Novas metas surgem na informática.|ED
+sample-5667.wav|Novas metas surgem na informática|ED
+sample-5658.wav|A temperatura é mais amena à noite|ED
+sample-5832.wav|A juventude tinha que revolucionar a escola.|ED
+sample-5824.wav|Sua sensibilidade mostrará o caminho.|ED
+sample-5669.wav|Se não fosse ela tudo teria sido melhor|ED

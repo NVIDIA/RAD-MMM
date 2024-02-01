@@ -1,0 +1,177 @@
+data:
+  dataloader_type: txt
+  use_multilingual_model: true
+  use_prior_interpolator: true
+  training_files:
+    LJS:
+      basedir: multilingual-dataset/opensource/LJSpeech-1.0
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: LJSpeech/ljs_audiopath_text_sid_emotion_duration_train_filelist_phonemized.txt
+      language: en_US
+      phonemized: true
+    BerndUngerer:
+      basedir: multilingual-dataset/opensource/HUI-Audio-Corpus-German/Bernd_Ungerer
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: HUI-Audio-Corpus-German/Bernd_Ungerer/berndungerer_audiopath_text_sid_emotion_duration_train_filelist_filtered_phonemized.txt
+      language: de_DE
+      phonemized: true
+    TUX:
+      basedir: multilingual-dataset/opensource/MAILABS/es_ES/male/tux
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: MAILABS/es_ES/male/tux/tux_audiopath_text_sid_emotion_duration_train_filelist_filtered_phonemized.txt
+      language: es_ES
+      phonemized: true
+    Karen:
+      basedir: multilingual-dataset/opensource/MAILABS/es_MX/female/karen_savage
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: MAILABS/es_MX/female/karen_savage/ks_audiopath_text_sid_emotion_duration_train_filelist_phonemized.txt
+      language: es_MX
+      phonemized: true
+    NadineEckert:
+      basedir: multilingual-dataset/opensource/MAILABS/fr_FR/female/nadine_eckert_boulet/
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: MAILABS/fr_FR/female/nadine_eckert_boulet/nadineeckert_audiopath_text_sid_emotion_duration_train_filelist_filtered_phonemized.txt
+      language: fr_FR
+      phonemized: true
+    IIIT-HYD:
+      basedir: multilingual-dataset/opensource/indic-languages-tts-iiit-h
+      sampling_rate: 16khz_single_channel
+      filelist_basedir: datasets/opensource/
+      filelist: indic-languages-tts-iiit-h/hi_indic_iiit_hyderbad_audiopath_text_sid_emotion_duration_train_phonemized.txt
+      language: hi_HI
+      phonemized: true
+    ED:
+      basedir: multilingual-dataset/opensource/TTS-Portuguese-Corpus/
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: TTS-Portuguese-Corpus/ed_portuguese_audiopath_transcript_sid_emotion_duration_train_phonemized.txt
+      language: pt_BR
+      phonemized: true
+  validation_files:
+    LJS:
+      basedir: multilingual-dataset/opensource/LJSpeech-1.0
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: LJSpeech/ljs_audiopath_text_sid_emotion_duration_val_filelist_phonemized.txt
+      language: en_US
+      phonemized: true
+    BerndUngerer:
+      basedir: multilingual-dataset/opensource/HUI-Audio-Corpus-German/Bernd_Ungerer
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: HUI-Audio-Corpus-German/Bernd_Ungerer/berndungerer_audiopath_text_sid_emotion_duration_val_filelist_phonemized.txt
+      language: de_DE
+      phonemized: true
+    TUX:
+      basedir: multilingual-dataset/opensource/MAILABS/es_ES/male/tux
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: MAILABS/es_ES/male/tux/tux_audiopath_text_sid_emotion_duration_val_filelist_phonemized.txt
+      language: es_ES
+      phonemized: true
+    Karen:
+      basedir: multilingual-dataset/opensource/MAILABS/es_MX/female/karen_savage
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: MAILABS/es_MX/female/karen_savage/ks_audiopath_text_sid_emotion_duration_val_filelist_phonemized.txt
+      language: es_MX
+      phonemized: true
+    NadineEckert:
+      basedir: multilingual-dataset/opensource/MAILABS/fr_FR/female/nadine_eckert_boulet/
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: MAILABS/fr_FR/female/nadine_eckert_boulet/nadineeckert_audiopath_text_sid_emotion_duration_val_filelist_phonemized.txt
+      language: fr_FR
+      phonemized: true
+    IIIT-HYD:
+      basedir: multilingual-dataset/opensource/indic-languages-tts-iiit-h
+      sampling_rate: 16khz_single_channel
+      filelist_basedir: datasets/opensource/
+      filelist: indic-languages-tts-iiit-h/hi_indic_iiit_hyderbad_audiopath_text_sid_emotion_duration_val_phonemized.txt
+      language: hi_HI
+      phonemized: true
+    ED:
+      basedir: multilingual-dataset/opensource/TTS-Portuguese-Corpus/
+      sampling_rate: 16khz
+      filelist_basedir: datasets/opensource/
+      filelist: TTS-Portuguese-Corpus/ed_portuguese_audiopath_transcript_sid_emotion_duration_val_phonemized.txt
+      language: pt_BR
+      phonemized: true
+  filter_length: 1024
+  hop_length: 256
+  win_length: 1024
+  sampling_rate: 16000
+  n_mel_channels: 80
+  mel_fmin: 0.0
+  mel_fmax: 8000.0
+  f0_min: 80.0
+  f0_max: 640.0
+  max_wav_value: 32768.0
+  return_audio: false
+  use_f0: true
+  use_energy_avg: true
+  use_log_f0: true
+  use_scaled_energy: true
+  symbol_set: radmmm_phonemizer_marker_segregated
+  cleaner_names:
+  - radtts_cleaners
+  heteronyms_path: tts_text_processing/heteronyms
+  phoneme_dict_path: tts_text_processing/cmudict-0.7b
+  p_phoneme: 1.0
+  handle_phoneme: word
+  handle_phoneme_ambiguous: first
+  g2p_type: phonemizer
+  phonemizer_cfg: 
+    en_US:
+      assets/en_US_word_ipa_map.txt
+    de_DE:
+      assets/de_DE_word_ipa_map.txt
+    en_UK:
+      assets/en_UK_word_ipa_map.txt
+    es_CO:
+      assets/es_CO_word_ipa_map.txt
+    es_ES:
+      assets/es_ES_word_ipa_map.txt
+    fr_FR:
+      assets/fr_FR_word_ipa_map.txt
+    hi_HI:
+      assets/hi_HI_word_ipa_map.txt
+    pt_BR:
+      assets/pt_BR_word_ipa_map.txt
+    te_TE:
+      assets/te_TE_word_ipa_map.txt
+  speaker_ids: null
+  include_speakers: null
+  include_emotions: [[['other'],true]]
+  n_frames: -1
+  use_attn_prior_masking: true
+  prepend_space_to_text: true
+  append_space_to_text: true
+  add_bos_eos_to_text: false
+  betabinom_cache_path: betabinom_cache2/
+  betabinom_scaling_factor: 0.05
+  lmdb_cache_path: null
+  dur_min: 0.1
+  dur_max: 10.2
+  combine_speaker_and_emotion: true
+  distance_tx_unvoiced: false
+  mel_noise_scale: 0.0
+  speaker_map: null
+  batch_size: 8
+  num_workers: 4
+  inference_transcript: scripts/sample_inference_transcript_phonemized.txt
+  speaker_stats_path: datasets/speaker_stats/opensource_collated_stats.json
+  use_wave_augmentations: true
+  wave_aug_config: 
+    aug_types: ["none","scale_formant","scale_formant"]
+    aug_scales: [1.0,0.9,1.10]
+    aug_probabilities: [0.6,0.2,0.2]
+    aug_languages_applicable: ["te_TE","hi_HI","mar_MAR","en_US","fr_FR","de_DE","pt_BR","es_ES","es_MX","en_UK","es_CO"]
+    num_aug_in_batch: 1
+    randomize_transform: false
+    n_augmentations: 2

@@ -1,0 +1,21 @@
+model:
+  f0_predictor:
+    class_path: attribute_predictors.ConvLSTMLinearDAP
+    init_args:
+      n_speaker_dim: 16
+      in_dim: 512
+      out_dim: 1
+      reduction_factor: 16
+      n_backbone_layers: 3
+      n_hidden: 256
+      kernel_size: 15
+      p_dropout: 0.5
+      target_offset: -5
+      lstm_type: bilstm
+      normalize_target: false
+      normalization_type: norm_log_space
+  f0_predictor_loss:
+    class_path: loss.AttributeRegressionLoss
+    init_args:
+      prefix: "f0_"
+      weight: 1.0

@@ -1,0 +1,14 @@
+{
+    "EN-LJSpeech": {
+        "basedir": "multilingual-dataset/LJSpeech-1.0",
+        "audio_dir": "16khz",
+        "filelist": "LJSpeech/ljs_audiopath_text_sid_emotion_duration_filelist.ndjson",
+        "train_filelist": "LJSpeech/ljs_audiopath_text_sid_emotion_duration_train_filelist.ndjson",
+        "val_filelist": "LJSpeech/ljs_audiopath_text_sid_emotion_duration_val_filelist.ndjson",
+        "language": "en",
+        "lmdbpath": "",
+        "license_name": "https://librivox.org/pages/public-domain/",
+        "license_link": "PublicDomain",
+        "opensource_data_link": "https://keithito.com/LJ-Speech-Dataset/"
+    }
+}

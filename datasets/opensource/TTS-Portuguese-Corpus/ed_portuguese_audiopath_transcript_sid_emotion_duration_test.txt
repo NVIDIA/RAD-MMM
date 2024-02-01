@@ -1,0 +1,34 @@
+sample-5672.wav|A juventude tinha que revolucionar a escola|ED|other|3.250000
+sample-5655.wav|A inauguração da vila é quarta ou quinta-feira|ED|other|4.530000
+sample-5656.wav|Vote se você tiver o título de eleitor|ED|other|2.780000
+sample-5755.wav|A inauguração da vila é quarta ou quinta-feira.|ED|other|3.680000
+sample-5659.wav|Em muitas cidades a população está diminuindo.|ED|other|2.570000
+sample-5673.wav|A cantora terá quatro meses para ensaiar seu canto|ED|other|4.170000
+sample-5666.wav|O ministério mudou demais com a eleição|ED|other|3.650000
+sample-5657.wav|Hoje é fundamental encontrar a razão da existência humana|ED|other|4.440000
+sample-5665.wav|A Amazônia é a reserva ecológica do globo|ED|other|4.210000
+sample-5671.wav|Espere seu amigo em casa|ED|other|1.840000
+sample-5756.wav|Vote se você tiver o título de eleitor.|ED|other|3.230000
+sample-5757.wav|Hoje é fundamental encontrar a razão da existência humana.|ED|other|4.340000
+sample-5670.wav|A principal personagem no filme é uma gueixa|ED|other|3.310000
+sample-5664.wav|Sua sensibilidade mostrará o caminho|ED|other|3.060000
+sample-5830.wav|A principal personagem no filme é uma gueixa.|ED|other|3.230000
+sample-5760.wav|Nunca se deve ficar em cima do morro.|ED|other|3.440000
+sample-5660.wav|Nunca se deve ficar em cima do morro|ED|other|3.760000
+sample-5825.wav|A Amazônia é a reserva ecológica do globo.|ED|other|2.840000
+sample-5826.wav|O ministério mudou demais com a eleição.|ED|other|2.950000
+sample-5663.wav|Eu finjo me banhar num lago ao amanhecer|ED|other|4.610000
+sample-5831.wav|Espere seu amigo em casa.|ED|other|1.500000
+sample-5661.wav|Para as pessoas estranhas o panorama é desolador|ED|other|4.170000
+sample-5662.wav|É bom te ver colhendo flores menino|ED|other|3.720000
+sample-5668.wav|O capital de uma empresa depende de sua produção|ED|other|3.630000
+sample-5761.wav|Para as pessoas estranhas o panorama é desolador.|ED|other|3.700000
+sample-5674.wav|Esse tema foi falado no congresso.|ED|other|2.910000
+sample-5763.wav|Eu finjo me banhar num lago ao amanhecer.|ED|other|3.590000
+sample-5758.wav|A temperatura é mais amena à noite.|ED|other|2.990000
+sample-5827.wav|Novas metas surgem na informática.|ED|other|3.140000
+sample-5667.wav|Novas metas surgem na informática|ED|other|3.290000
+sample-5658.wav|A temperatura é mais amena à noite|ED|other|2.760000
+sample-5832.wav|A juventude tinha que revolucionar a escola.|ED|other|2.870000
+sample-5824.wav|Sua sensibilidade mostrará o caminho.|ED|other|2.630000
+sample-5669.wav|Se não fosse ela tudo teria sido melhor|ED|other|3.140000

@@ -1,0 +1,75 @@
+model:
+  use_accent: true
+  n_augmentations: 2
+  n_speakers: 7
+  n_accents: 7
+  n_accent_dim: 8
+  use_accent_emb_for_encoder: true
+  use_accent_emb_for_alignment: false
+  use_speaker_emb_for_alignment: true
+  text_encoder:
+    class_path: common.Encoder
+    init_args:
+      encoder_n_convolutions: 3
+      encoder_embedding_dim: 520 # update this to pick dynamically from config based on accent
+      lstm_norm_fn: spectral
+  decoder:
+    class_path: decoders.RADMMMFlow
+    init_args:
+      use_accent: true
+      use_accent_emb_for_decoder: false
+      n_accent_dim: 8
+      n_speaker_dim: 16
+      n_text_dim: 520 # update this to pick dynamically from config based on accent
+      use_context_lstm: true
+      context_lstm_norm: null
+      n_f0_dims: 1
+      n_energy_avg_dims: 1
+      context_w_f0_and_energy: true
+      # unvoiced_bias_activation: null
+      n_mel_channels: 80
+      n_flows: 8
+      n_conv_layers_per_step: 4
+      n_early_size: 2
+      n_early_every: 2
+      n_group_size: 2
+      affine_model: wavenet
+      scaling_fn: tanh
+      affine_activation: softplus
+      use_partial_padding: true
+  decoder_loss:
+    class_path: loss.RADMMMLoss
+    init_args:
+      sigma: 1.0
+      n_group_size: 2
+      CTC_blank_logprob: -1
+      kl_loss_start_iter: 25000
+      binarization_loss_weight: 1.0
+      ctc_loss_weight: 0.1
+  speaker_embed_regularization_loss:
+    class_path: loss.VarianceCovarianceEmbeddingRegLoss
+    init_args:
+      name: speaker
+      loss_variance_weight: 0.1
+      loss_covariance_weight: 0.1
+      gamma: 1.0
+  speaker_accent_cross_regularization_loss:
+    class_path: loss.AttributeMinCrossCovarianceRegLoss
+    init_args:
+      attr_name1: speaker
+      attr_name2: accent
+      loss_cross_covariance_weight: 1.0
+  optim_algo: RAdam
+  learning_rate: 0.0001
+  weight_decay: 1.0e-06
+  n_text_tokens: 426
+  sigma: 1.0
+  iters_per_checkpoint: 3000
+  seed: null
+  unfreeze_modules: all
+  binarization_start_iter: 20000
+  output_directory: /debug
+  scale_mel: True
+  vocoder_config_path: vocoders/hifigan_vocoder/config_16khz.json
+  vocoder_checkpoint_path: vocoders/hifigan_vocoder/g_00072000
+  p_estimate_ambiguous_phonemes: 0.0

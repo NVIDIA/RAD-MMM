@@ -1,0 +1,86 @@
+training_files:
+  LJS:
+    basedir: multilingual-dataset/LJSpeech-1.0
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: LJSpeech/ljs_audiopath_text_sid_emotion_duration_train_filelist.txt
+    language: en_US
+  BerndUngerer:
+    basedir: multilingual-dataset/HUI-Audio-Corpus-German/Bernd_Ungerer
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: HUI-Audio-Corpus-German/Bernd_Ungerer/berndungerer_audiopath_text_sid_emotion_duration_train_filelist_filtered.txt
+    language: de_DE
+  TUX:
+    basedir: multilingual-dataset/MAILABS/es_ES/male/tux
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: MAILABS/es_ES/male/tux/tux_audiopath_text_sid_emotion_duration_train_filelist_filtered.txt
+    language: es_ES
+  Karen:
+    basedir: multilingual-dataset/MAILABS/es_MX/female/karen_savage
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: MAILABS/es_MX/female/karen_savage/ks_audiopath_text_sid_emotion_duration_train_filelist.txt
+    language: es_MX
+  NadineEckert:
+    basedir: multilingual-dataset/MAILABS/fr_FR/female/nadine_eckert_boulet/
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: MAILABS/fr_FR/female/nadine_eckert_boulet/nadineeckert_audiopath_text_sid_emotion_duration_train_filelist_filtered.txt
+    language: fr_FR
+  IIIT-HYD:
+    basedir: multilingual-dataset/indic-languages-tts-iiit-h
+    sampling_rate: 16khz_single_channel
+    filelist_basdir: datasets/opensource/
+    filelist: indic-languages-tts-iiit-h/hi_indic_iiit_hyderbad_audiopath_text_sid_emotion_duration_train.txt
+    language: hi_HI
+  ED:
+    basedir: multilingual-dataset/TTS-Portuguese-Corpus/
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: TTS-Portuguese-Corpus/ed_portuguese_audiopath_transcript_sid_emotion_duration_train.txt
+    language: pt_BR
+validation_files:
+  LJS:
+    basedir: multilingual-dataset/LJSpeech-1.0
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: LJSpeech/ljs_audiopath_text_sid_emotion_duration_val_filelist.txt
+    language: en_US
+  BerndUngerer:
+    basedir: multilingual-dataset/HUI-Audio-Corpus-German/Bernd_Ungerer
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: HUI-Audio-Corpus-German/Bernd_Ungerer/berndungerer_audiopath_text_sid_emotion_duration_val_filelist.txt
+    language: de_DE
+  TUX:
+    basedir: multilingual-dataset/MAILABS/es_ES/male/tux
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: MAILABS/es_ES/male/tux/tux_audiopath_text_sid_emotion_duration_val_filelist.txt
+    language: es_ES
+  Karen:
+    basedir: multilingual-dataset/MAILABS/es_MX/female/karen_savage
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: MAILABS/es_MX/female/karen_savage/ks_audiopath_text_sid_emotion_duration_val_filelist.txt
+    language: es_MX
+  NadineEckert:
+    basedir: multilingual-dataset/MAILABS/fr_FR/female/nadine_eckert_boulet/
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: MAILABS/fr_FR/female/nadine_eckert_boulet/nadineeckert_audiopath_text_sid_emotion_duration_val_filelist.txt
+    language: fr_FR
+  IIIT-HYD:
+    basedir: multilingual-dataset/indic-languages-tts-iiit-h
+    sampling_rate: 16khz_single_channel
+    filelist_basdir: datasets/opensource/
+    filelist: indic-languages-tts-iiit-h/hi_indic_iiit_hyderbad_audiopath_text_sid_emotion_duration_val.txt
+    language: hi_HI
+  ED:
+    basedir: multilingual-dataset/TTS-Portuguese-Corpus/
+    sampling_rate: 16khz
+    filelist_basdir: datasets/opensource/
+    filelist: TTS-Portuguese-Corpus/ed_portuguese_audiopath_transcript_sid_emotion_duration_val.txt
+    language: pt_BR

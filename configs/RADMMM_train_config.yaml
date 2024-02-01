@@ -1,0 +1,41 @@
+seed_everything: 42
+trainer:
+  logger: true
+  enable_checkpointing: true
+  callbacks: null
+  default_root_dir: /debug
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: norm
+  num_nodes: 1
+  devices: auto
+  enable_progress_bar: true
+  overfit_batches: 0.0
+  check_val_every_n_epoch: null
+  fast_dev_run: false
+  accumulate_grad_batches: 1
+  max_epochs: -1
+  min_epochs: null
+  max_steps: -1
+  min_steps: null
+  max_time: null
+  limit_train_batches: null
+  limit_val_batches: null
+  limit_test_batches: null
+  limit_predict_batches: null
+  val_check_interval: 500
+  log_every_n_steps: 10
+  accelerator: gpu
+  strategy: ddp
+  sync_batchnorm: false
+  precision: 32
+  enable_model_summary: true
+  num_sanity_val_steps: 0
+  profiler: null
+  benchmark: null
+  deterministic: null
+  reload_dataloaders_every_n_epochs: 0
+  detect_anomaly: false
+  plugins:
+    - class_path: lightning_fabric.plugins.environments.LightningEnvironment
+checkpoint_callback:
+  every_n_train_steps: 5000

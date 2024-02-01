@@ -1,0 +1,18 @@
+model:
+  duration_predictor:
+    class_path: attribute_predictors.LSTMConvDAP
+    init_args:
+      n_speaker_dim: 16
+      in_dim: 512
+      out_dim: 1
+      reduction_factor: 16
+      n_backbone_layers: 3
+      n_hidden: 256
+      kernel_size: 3
+      p_dropout: 0.5
+      log_target: true
+  duration_predictor_loss:
+    class_path: loss.AttributeRegressionLoss
+    init_args:
+      prefix: "duration_"
+      weight: 1.0

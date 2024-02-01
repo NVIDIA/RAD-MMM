@@ -1,0 +1,74 @@
+{
+    "HI-Hindi_F": {
+        "basedir": "/home/dcg-adlr-rbadlani-data/datasets/challenges/limmits_2023/processed_dataset/Hindi_F/",
+        "audio_dir": "22khz",
+        "filelist": "LIMMITS-2023/Hindi_F/limmits_hindi_f_audiopath_text_sid_emotion_duration_nonparallel_data.ndjson",
+        "train_filelist": "LIMMITS-2023/Hindi_F/limmits_hindi_f_audiopath_text_sid_emotion_duration_train_nonparallel_data.ndjson",
+        "val_filelist": "LIMMITS-2023/Hindi_F/limmits_hindi_f_audiopath_text_sid_emotion_duration_val_nonparallel_data.ndjson",
+        "language": "hi_HI",
+        "lmdbpath": "",
+        "license_name": "CHALLENGE_DATA",
+        "license_link": "CHALLENGE_DATA",
+        "opensource_data_link": "https://sites.google.com/view/syspinttschallenge2023/home"
+    },
+    "HI-Hindi_M": {
+        "basedir": "/home/dcg-adlr-rbadlani-data/datasets/challenges/limmits_2023/processed_dataset/Hindi_M/",
+        "audio_dir": "22khz",
+        "filelist": "LIMMITS-2023/Hindi_M/limmits_hindi_m_audiopath_text_sid_emotion_duration_nonparallel_data.ndjson",
+        "train_filelist": "LIMMITS-2023/Hindi_M/limmits_hindi_m_audiopath_text_sid_emotion_duration_train_nonparallel_data.ndjson",
+        "val_filelist": "LIMMITS-2023/Hindi_M/limmits_hindi_m_audiopath_text_sid_emotion_duration_val_nonparallel_data.ndjson",
+        "language": "hi_HI",
+        "lmdbpath": "",
+        "license_name": "CHALLENGE_DATA",
+        "license_link": "CHALLENGE_DATA",
+        "opensource_data_link": "https://sites.google.com/view/syspinttschallenge2023/home"
+    },
+    "TE-Telugu_F": {
+        "basedir": "/home/dcg-adlr-rbadlani-data/datasets/challenges/limmits_2023/processed_dataset/Telugu_F/",
+        "audio_dir": "22khz",
+        "filelist": "LIMMITS-2023/Telugu_F/limmits_telugu_f_audiopath_text_sid_emotion_duration_nonparallel_data.ndjson",
+        "train_filelist": "LIMMITS-2023/Telugu_F/limmits_telugu_f_audiopath_text_sid_emotion_duration_train_nonparallel_data.ndjson",
+        "val_filelist": "LIMMITS-2023/Telugu_F/limmits_telugu_f_audiopath_text_sid_emotion_duration_val_nonparallel_data.ndjson",
+        "language": "te_TE",
+        "lmdbpath": "",
+        "license_name": "CHALLENGE_DATA",
+        "license_link": "CHALLENGE_DATA",
+        "opensource_data_link": "https://sites.google.com/view/syspinttschallenge2023/home"
+    },
+    "TE-Telugu_M": {
+        "basedir": "/home/dcg-adlr-rbadlani-data/datasets/challenges/limmits_2023/processed_dataset/Telugu_M/",
+        "audio_dir": "22khz",
+        "filelist": "LIMMITS-2023/Telugu_M/limmits_telugu_m_audiopath_text_sid_emotion_duration_nonparallel_data.ndjson",
+        "train_filelist": "LIMMITS-2023/Telugu_M/limmits_telugu_m_audiopath_text_sid_emotion_duration_train_nonparallel_data.ndjson",
+        "val_filelist": "LIMMITS-2023/Telugu_M/limmits_telugu_m_audiopath_text_sid_emotion_duration_val_nonparallel_data.ndjson",
+        "language": "te_TE",
+        "lmdbpath": "",
+        "license_name": "CHALLENGE_DATA",
+        "license_link": "CHALLENGE_DATA",
+        "opensource_data_link": "https://sites.google.com/view/syspinttschallenge2023/home"
+    },
+    "MAR-Marathi_F": {
+        "basedir": "/home/dcg-adlr-rbadlani-data/datasets/challenges/limmits_2023/processed_dataset/Marathi_F/",
+        "audio_dir": "22khz",
+        "filelist": "LIMMITS-2023/Marathi_F/limmits_marathi_f_audiopath_text_sid_emotion_duration_nonparallel_data.ndjson",
+        "train_filelist": "LIMMITS-2023/Marathi_F/limmits_marathi_f_audiopath_text_sid_emotion_duration_train_nonparallel_data.ndjson",
+        "val_filelist": "LIMMITS-2023/Marathi_F/limmits_marathi_f_audiopath_text_sid_emotion_duration_val_nonparallel_data.ndjson",
+        "language": "mar_MAR",
+        "lmdbpath": "",
+        "license_name": "CHALLENGE_DATA",
+        "license_link": "CHALLENGE_DATA",
+        "opensource_data_link": "https://sites.google.com/view/syspinttschallenge2023/home"
+    },
+    "MAR-Marathi_M": {
+        "basedir": "/home/dcg-adlr-rbadlani-data/datasets/challenges/limmits_2023/processed_dataset/Marathi_M/",
+        "audio_dir": "22khz",
+        "filelist": "LIMMITS-2023/Marathi_M/limmits_marathi_m_audiopath_text_sid_emotion_duration_nonparallel_data.ndjson",
+        "train_filelist": "LIMMITS-2023/Marathi_M/limmits_marathi_m_audiopath_text_sid_emotion_duration_train_nonparallel_data.ndjson",
+        "val_filelist": "LIMMITS-2023/Marathi_M/limmits_marathi_m_audiopath_text_sid_emotion_duration_val_nonparallel_data.ndjson",
+        "language": "mar_MAR",
+        "lmdbpath": "",
+        "license_name": "CHALLENGE_DATA",
+        "license_link": "CHALLENGE_DATA",
+        "opensource_data_link": "https://sites.google.com/view/syspinttschallenge2023/home"
+    }
+}

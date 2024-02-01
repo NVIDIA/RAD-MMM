@@ -1,0 +1,11 @@
+angelina/angelina_36_delgado_f000065.wav|{¡n ˈo} {m ˈa s} {ˌa l e ɣ ˈa t o s!} {¡n ˈo} {m ˈa s} {tʃ ˈi s m e s} {n ˈi} {p l ˈeɪ t o s!} {ʝ ˈa} {ð ˈi x e} {a} {ˈe s e} {k ˌa β a j j ˈe ɾ o} {k e} {n ˈo} {e n t j ˈɛ n d e s} {x ˈo t a} {ð e l} {n e ɣ ˈo s j o,} {p ˌe ɾ o} {k e} {ˌa p ɾ e n d e ɾ ˈa s.}|mailabs-karensavage|other|8.399812
+angelina/angelina_23_delgado_f000063.wav|{k ˌo n o s ˈi a} {m ˈu j j} {β j ˈe n} {a} {k ˈa s t ɾ o} {p ˈe ɾ e s;}|mailabs-karensavage|other|2.889813
+angelina/angelina_39_delgado_f000031.wav|{t ˈi a} {p ˈe p a} {t ɾ a t ˈo} {ð e} {k ˌo m b e n s ˈe ɾ m e} {ð e} {k e} {n ˈo} {ð e β ˈi a} {ʝ ˈo} {ð e x ˈa ɾ l a s.}|mailabs-karensavage|other|4.239813
+angelina/angelina_19_delgado_f000037.wav|{m e} {l a n s ˈe} {a} {l a} {k ˈa j j e.}|mailabs-karensavage|other|2.049812
+angelina/angelina_26_delgado_f000034.wav|{¡b ˈa m o s,} {m u tʃ ˈa tʃ o...} {b ˈa m o s!} {¿k ˈe} {a ɣ w ˈa ɾ ð a s?}|mailabs-karensavage|other|2.999812
+angelina/angelina_45_delgado_f000043.wav|{¿p o ɾ} {k ˈe} {m e} {ˈe tʃ a s} {e n} {k ˈa ɾ a} {m i s} {t ɾ i s t ˈe s a s} {i} {m ˌe l a n k o l ˈi a s?}|mailabs-karensavage|other|3.849813
+angelina/angelina_08_delgado_f000150.wav|{e l} {m e x ˈo ɾ} {ð ˈi a,} {l u ˈe ɣ o} {k e} {m e} {ð ˈe x e} {e l} {ɾ ɾ ˈeʊ m a,} {l e} {l ˈa ɾ ɣ o} {ˈu n} {a ɾ t ˈi k u l o} {m ˌo ɾ ɾ o k o t ˈu ð o,}|mailabs-karensavage|other|5.387812
+angelina/angelina_35_delgado_f000063.wav|{¡ɾ ɾ o ð ˈo l f o!} {ˈe ɾ a} {l i n ˈi j j a.}|mailabs-karensavage|other|3.169812
+angelina/angelina_23_delgado_f000163.wav|{ˌe n s e n d j ˈo} {e l} {ˌa p a ɣ ˈa ð o} {p ˈu ɾ o,} {t o m ˈo} {a l j ˈɛ n t o,} {s e} {p a s ˈo} {l a} {m ˈa n o} {p o ɾ} {l o s} {β ˌi ɣ o t ˈa s o s,} {i} {p ɾ ˌo s i ɣ j ˈo} {e n} {t ˈo n o} {ð ˈu l s e,}|mailabs-karensavage|other|7.449813
+angelina/angelina_49_delgado_f000027.wav|{t ˈu} {ɣ ˌa β ɾ i ˈe l a,} {ʝ ˈa} {l e} {k o n ˈo s e s...}|mailabs-karensavage|other|2.469813
+angelina/angelina_29_delgado_f000006.wav|{l e} {ˈi s e} {β ˈe ɾ} {k e} {m i} {p ˈo k a} {ɾ ɾ ˌe f l e k s j ˈo n} {n ˈo} {ð e β ˈi a} {s ˈe r} {m o t ˈi β o} {ð e} {ð i s ɣ ˈu s t o,}|mailabs-karensavage|other|5.599812
