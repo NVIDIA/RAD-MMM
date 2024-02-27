@@ -9,7 +9,7 @@ pip install requirements.txt
 ```
 
 ## Getting started
-In order to get started, please follow the steps below: test
+In order to get started, please follow the steps below:
 
 1. Download the data. Use the links below to download the opensource dataset or use this [link](https://drive.google.com/drive/folders/1tALLXAR-quig3yAvKcCW12oAKWgV9w_2?usp=sharing) to download our version of the following dataset. Please place it under a directory with the following name:
 

@@ -475,6 +475,7 @@ class TTSModel(LightningModule):
 
     def load_pretrained_submodules(self, checkpoint_path, sm_names):
         loaded_dict = torch.load(checkpoint_path, map_location=lambda storage, loc: storage)['state_dict']
+        print(checkpoint_path)
         current_dict = self.state_dict()
         kwrds = sm_names
         for kwrd in kwrds:

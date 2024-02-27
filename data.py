@@ -43,7 +43,7 @@ import json
 import numpy as np
 import lmdb
 import pickle as pkl
-from scripts.phonemize_text import phonemize_text
+# from scripts.phonemize_text import phonemize_text
 import torch
 import torch.utils.data
 import torch.nn.functional as F
