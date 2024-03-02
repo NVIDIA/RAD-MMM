@@ -50,6 +50,16 @@
       "emotion": "other"
     },
     {
+      "script": "{l e} {ˈi s e} {β ˈe ɾ} {k e} {m i} {p ˈo k a} {ɾ ɾ ˌe f l e k s j ˈo n} {n ˈo} {ð e β ˈi a} {s ˈe r} {m o t ˈi β o} {ð e} {ð i s ɣ ˈu s t o,}",
+      "spk_id": "mailabs-karensavage",
+      "decoder_spk_id": "mailabs-karensavage",
+      "duration_spk_id": "mailabs-karensavage",
+      "energy_spk_id": "mailabs-karensavage",
+      "f0_spk_id": "mailabs-karensavage",
+      "language": "es_MX",
+      "emotion": "other"
+    },
+    {
       "script": "{p ˈeɪ ŋ s æ s y} {k y} {a} {ˈa z m æ} {t ˈe ɲ æ} {ˌo ɾ ˈi ʒ eɪ ŋ} {n ˌu m æ} {k ˌo ŋ ʒ u ɡ a s ˈɐ̃ʊ̃} {dʒ y} {f ˌa t ˈo ɾ y z} {ʒ ˌe n ˈɛ tʃ i k ʊ z} {i} {ˌɐ̃ m b i eɪ ŋ t ˈaɪ s.}",
       "spk_id": "ED",
       "decoder_spk_id": "ED",

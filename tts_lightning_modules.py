@@ -96,6 +96,7 @@ class TTSModel(LightningModule):
                  ):
 
         super().__init__()
+        self.save_hyperparameters()
 
         if phonemizer_cfg is not None and \
             type(phonemizer_cfg) == str:
