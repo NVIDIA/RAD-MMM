@@ -96,7 +96,7 @@ class TTSModel(LightningModule):
                  ):
 
         super().__init__()
-        self.save_hyperparameters()
+        # self.save_hyperparameters()
 
         if phonemizer_cfg is not None and \
             type(phonemizer_cfg) == str:
@@ -294,7 +294,14 @@ class TTSModel(LightningModule):
         prosody_speaker_ids: spk ids to use for attribute prediction, in case we want to mix and match
         """
         encoded_text = [] # encoded by tp, not output of text encoder, which comes later
+        print("\n\n")
+        print("raw text: ", raw_text)
+        print("\n\n")
         for raw_t, lang in zip(raw_text, language):
+            print("\n\n")
+            print("raw t: ", raw_t)
+            print("lang: ", lang)
+            print("\n\n")
             encoded_text.append(self.tp_inference.encode_text(raw_t, language=lang))
 
         # compute lengths

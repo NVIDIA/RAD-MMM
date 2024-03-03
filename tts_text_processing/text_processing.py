@@ -102,6 +102,7 @@ class TextProcessing(object):
             self.phonemizer_cfg = phonemizer_cfg
             self.phonemizer_backend_dict = {}
             for language, lang_phoneme_dict_path in phonemizer_cfg.items():
+                print("loading: ", lang_phoneme_dict_path)
                 self.phonemizer_backend_dict[language] = Grapheme2PhonemeDictionary(
                     lang_phoneme_dict_path, encoding=encoding,
                     split_token=dict_split_token,
@@ -295,6 +296,7 @@ class TextProcessing(object):
     def encode_text(self, text, return_all=False, language=None, is_phonemized=False):
         if not is_phonemized:
             print(f'{text} is NOT phonemized...')
+            print(language)
             text_clean = self.clean_text(text)
             text = text_clean
             text_phoneme = ''
