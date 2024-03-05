@@ -28,7 +28,7 @@ class Grapheme2PhonemeDictionary:
     """Thin wrapper around g2p data."""
     def __init__(self, file_or_path, keep_ambiguous=True, encoding='latin-1',
                 split_token='\t', language=None):
-        with open(file_or_path, encoding=encoding) as f:
+        with open(file_or_path) as f:
             if language is None:
                 # default to cmudict
                 entries = _parse_g2p(f, split_token)
@@ -44,7 +44,7 @@ class Grapheme2PhonemeDictionary:
 
     def lookup(self, word):
         """Returns list of pronunciations of the given word."""
-        return self._entries.get(word)
+        return self._entries.get(word.upper())
 
 
 def _parse_g2p(file, split_token='\t'):
@@ -66,9 +66,9 @@ def _parse_multilanguage_g2p(file, split_token='\t'):
         parts = line.split(split_token)
         word = parts[0]
         # make sure all keys are upper case for proper match
-        # word = word.upper()
+        word = word.upper()
         pronunciations = parts[1].strip()
-        pronunciations = pronunciations.split(" ")  # default in ipa-dict
+        pronunciations = pronunciations.split(", ")  # default in ipa-dict
 
         if word not in g2p:
             g2p[word] = []

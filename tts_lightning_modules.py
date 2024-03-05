@@ -294,14 +294,7 @@ class TTSModel(LightningModule):
         prosody_speaker_ids: spk ids to use for attribute prediction, in case we want to mix and match
         """
         encoded_text = [] # encoded by tp, not output of text encoder, which comes later
-        print("\n\n")
-        print("raw text: ", raw_text)
-        print("\n\n")
         for raw_t, lang in zip(raw_text, language):
-            print("\n\n")
-            print("raw t: ", raw_t)
-            print("lang: ", lang)
-            print("\n\n")
             encoded_text.append(self.tp_inference.encode_text(raw_t, language=lang))
 
         # compute lengths
@@ -611,6 +604,7 @@ class TTSModel(LightningModule):
         for iter, wav in enumerate(audio_outputs):
             curr_fname = os.path.join(self.prediction_output_dir, "output_sample_%d_%s.wav" %(batch['idx'][iter], self.predict_mode))
             write_wav(curr_fname, self.sampling_rate, wav)
+        return curr_fname
 
     def on_fit_start(self):
         if self.global_rank == 0:

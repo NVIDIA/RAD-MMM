@@ -164,7 +164,7 @@ pyrsistent==0.19.3
 PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
 python-dateutil==2.8.2
 python-json-logger==2.0.7
-pytorch-lightning==2.0.0
+pytorch-lightning==2.0.2
 pytz==2022.7.1
 PyYAML==6.0
 pyzmq==25.0.2

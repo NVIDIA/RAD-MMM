@@ -36,7 +36,7 @@ from .grapheme_dictionary import Grapheme2PhonemeDictionary
 _curly_re = re.compile(r'(.*?)\{(.+?)\}(.*)')
 
 # Regular expression matching words and not words
-_words_re = re.compile(r"([a-zA-ZÀ-ž]+['][a-zA-ZÀ-ž]+|[a-zA-ZÀ-ž]+)|([{][^}]+[}]|[^a-zA-ZÀ-ž{}]+)")
+_words_re = re.compile(r"([a-zA-Z\u0900-\u097F]+['][a-zA-Z\u0900-\u097F]+|[a-zA-Z\u0900-\u097F]+)|([{][^}]+[}]|[^a-zA-Z\u0900-\u097F{}]+)")
 
 _phonemizer_language_map = {
     'hi_HI': 'hi', 
@@ -246,8 +246,6 @@ class TextProcessing(object):
         return self.symbols_to_sequence(['@' + s for s in text.split()])
 
     def get_phoneme(self, word, phoneme_dict=None):
-        print(word)
-        print(phoneme_dict)
         phoneme_suffix = ''
 
         if phoneme_dict == None:
@@ -255,8 +253,11 @@ class TextProcessing(object):
         else:
             phoneme = phoneme_dict.lookup(word)
             if phoneme is None:
-                return word 
-            phoneme = "{" + ' '.join(phoneme) + phoneme_suffix + "}"
+                return word
+            if type(phoneme) == list and len(phoneme) > 1:
+                phoneme = phoneme[0]
+            
+            phoneme = "{" + ''.join(phoneme) + phoneme_suffix + "}"
             return phoneme
 
         if word.lower() in self.heteronyms:
@@ -295,8 +296,8 @@ class TextProcessing(object):
 
     def encode_text(self, text, return_all=False, language=None, is_phonemized=False):
         if not is_phonemized:
-            print(f'{text} is NOT phonemized...')
-            print(language)
+            # print(f'{text} is NOT phonemized...')
+            # print(language)
             text_clean = self.clean_text(text)
             text = text_clean
             text_phoneme = ''

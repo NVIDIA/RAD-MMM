@@ -313,7 +313,7 @@ class AudioDataset(torch.utils.data.Dataset):
         return d
 
     def load_speaker_stats(self, speaker_name):
-        print(speaker_name)
+        # print(speaker_name)
         if self.speaker_stats is not None and speaker_name.lower() in self.speaker_stats.keys():
             return self.speaker_stats[speaker_name.lower()]
         else:
