@@ -93,11 +93,11 @@ class BaseAudioDataModule(pl.LightningDataModule):
             phonemizer_cfg=self.phonemizer_cfg)
         self.combine_speaker_and_emotion = combine_speaker_and_emotion
         self.speaker_stats_path = speaker_stats_path
-        assert(predict_mode in {'tts', 'ttsLive', 'reconstruction'})
+        assert(predict_mode in {'tts', 'reconstruction'})
         self.f0_pred_type = f0_pred_type
 
 
-    def setup(self, stage: Optional[str]=None, inferData: Optional[str]=None):
+    def setup(self, stage: Optional[str]=None):
         trainset = AudioDataset(datasets=self.training_files,
                                 tp=self.tp,
                                 **self.dset_args)
