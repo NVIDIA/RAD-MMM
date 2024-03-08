@@ -63,7 +63,7 @@ class AttributePredictor(nn.Module):
 
     def tx_data(self, x, x_mean=None, x_std=None):
         if self.normalize_target:
-            print(f'x_mean={x_mean}|x_std={x_std}')
+            # print(f'x_mean={x_mean}|x_std={x_std}')
             assert self.normalization_type is not None
             if self.normalization_type == 'norm_lin_space':
                 assert torch.all(x_mean > 0.0).item()
@@ -80,8 +80,8 @@ class AttributePredictor(nn.Module):
                 assert torch.all(x_mean > 0.0).item()
                 assert torch.all(x_std > 0.0).item()
                 x_recon = x.clone()
-                print(f'begin f0 stats: {x_recon.mean()} +/- {x_recon.std()}')
-                print(f'speaker f0 stats: {x_mean.mean()} +/- {x_std.mean()}')
+                # print(f'begin f0 stats: {x_recon[x_recon!=0.0].mean()} +/- {x_recon[x_recon!=0.0].std()}')
+                # print(f'speaker f0 stats: {x_mean.mean()} +/- {x_std.mean()}')
                 
                 # f0 already in log space
                 # x_recon = torch.log(
@@ -92,13 +92,14 @@ class AttributePredictor(nn.Module):
 
                 # normalize in the log space.
                 x_recon = (x_recon - x_mean_exp) / x_std_exp
+                # print(f'transformed [0-1] f0 stats: {x_recon.mean()} +/- {x_recon.std()}')
 
                 x_target = (x_recon + 5) / 10 # scale to ~ [0, 1] in log space
-                print(f'transformed f0 stats: {x_target.mean()} +/- {x_target.std()}')
+                # print(f'transformed f0 stats: {x_target.mean()} +/- {x_target.std()}')
 
                 x = x_target
         else:
-            x = x*self.target_scale + self.target_offset
+            x = x * self.target_scale + self.target_offset
             if self.log_target:
                 x = torch.log(x+1)
 

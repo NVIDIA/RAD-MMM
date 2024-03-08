@@ -68,5 +68,15 @@
     "f0_spk_id": "ED",
     "language": "en_US",
     "emotion": "other"
+  },
+  {
+    "script": "{θ ˈæ ŋ k} {j uː!} { , } {dʰ ˌə n j ə ʋ ˈaː d} { , } {m ɛ ʁ s ˈi} { . } {d ˈa ŋ k ə} { . } {ɡ ɾ ˈa θ j a s} { . }",
+    "spk_id": "ljs",
+    "decoder_spk_id": "ljs",
+    "duration_spk_id": "ljs",
+    "energy_spk_id": "ljs",
+    "f0_spk_id": "ljs",
+    "language": "en_US",
+    "emotion": "other"
   }
 ]

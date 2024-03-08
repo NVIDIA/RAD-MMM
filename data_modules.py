@@ -47,7 +47,7 @@ class BaseAudioDataModule(pl.LightningDataModule):
                  mel_noise_scale=0.0, scale_mel=True, speaker_map=None,
                  accent_map=None,
                  use_prior_interpolator=True, batch_size=8, num_workers=8,
-                 phonemizer_cfg: Optional[str]=None, return_audio=False,
+                 phonemizer_cfg=None, return_audio=False,
                  inference_transcript: Optional[str]=None, predict_mode="tts",
                  reconstruction_files: Optional[str]=None,
                  prediction_recon_files: Optional[dict]=None,

@@ -92,7 +92,7 @@ class TTSModel(LightningModule):
                  use_accent_emb_for_alignment=False,
                  use_speaker_emb_for_alignment=False,
                  n_augmentations: int=0,
-                 phonemizer_cfg: Optional[str]=None
+                 phonemizer_cfg=None
                  ):
 
         super().__init__()
@@ -627,7 +627,7 @@ class TTSModel(LightningModule):
         f0_std = batch['speaker_f0_std']
         energy_mean = batch['speaker_energy_mean']
         energy_std = batch['speaker_energy_std']
-        
+
         return (mel, speaker_ids, accent_ids, text, in_lens, out_lens, attn_prior, f0,
                 voiced_mask, p_voiced, energy_avg, audiopaths, text_raw, f0_mean, 
                 f0_std, energy_mean, energy_std, language)

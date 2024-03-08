@@ -124,7 +124,7 @@ class AudioDataset(torch.utils.data.Dataset):
                  combine_speaker_and_emotion=False, distance_tx_unvoiced=False,
                  mel_noise_scale=0.0, speaker_map=None, accent_map=None,
                  use_prior_interpolator:bool=True,
-                 phonemizer_cfg: Optional[str]=None, return_audio=False,
+                 phonemizer_cfg=None, return_audio=False,
                  use_multilingual_model=False,
                  g2p_type='phonemizer',
                  use_wave_augmentations=False,
@@ -258,7 +258,7 @@ class AudioDataset(torch.utils.data.Dataset):
                 language = 'en_US' # default to english
 
             phonemized = False
-            print(dset_dict)
+            # print(dset_dict)
             if 'phonemized' in dset_dict:
                 phonemized = bool(dset_dict['phonemized'])
 
@@ -272,7 +272,7 @@ class AudioDataset(torch.utils.data.Dataset):
             wav_folder_prefix = os.path.join(folder_path, sampling_rate)
             with open(filelist_path, encoding='utf-8') as f:
                 data = [line.strip().split(split) for line in f]
-            print(f'processing file: {filelist_path}')
+            # print(f'processing file: {filelist_path}')
             for d in data:
                 dataset.append(
                     {'audiopath': os.path.join(wav_folder_prefix, d[0]),
@@ -313,7 +313,7 @@ class AudioDataset(torch.utils.data.Dataset):
         return d
 
     def load_speaker_stats(self, speaker_name):
-        print(speaker_name)
+        # print(speaker_name)
         if self.speaker_stats is not None and speaker_name.lower() in self.speaker_stats.keys():
             return self.speaker_stats[speaker_name.lower()]
         else:
@@ -420,7 +420,7 @@ class AudioDataset(torch.utils.data.Dataset):
     def __getitem__(self, index):
         data = self.data[index]
         audiopath, text = data['audiopath'], data['text']
-        print(audiopath)
+        # print(audiopath)
         speaker_id = data['speaker']
         
         # load speaker stats
