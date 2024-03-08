@@ -124,7 +124,7 @@ data:
   phoneme_dict_path: tts_text_processing/cmudict-0.7b
   p_phoneme: 1.0
   handle_phoneme: word
-  handle_phoneme_ambiguous: ignore
+  handle_phoneme_ambiguous: first
   g2p_type: phonemizer
   phonemizer_cfg: null
   speaker_ids: null
