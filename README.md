@@ -26,7 +26,7 @@ multilingual-dataset/
 
 4. Preprocess the dataset to phonemize the data:
 ```bash
-python3 scripts/phonemize_text.py -c configs/RADMMM_opensource_16khz_data_config.yaml
+python3 scripts/phonemize_text.py -c configs/RADMMM_opensource_data_config_phonemizerless.yaml
 ```
 
 5. Train the model by following the steps in Training or download the pretrained checkpoints for RADMMM(mel-spectogram generator as well as HiFi-GAN(vocoder) as explained in Pretrained Checkpoints.
@@ -38,12 +38,12 @@ Train the decoder and attribute predictor using the commands given below:
 
 1. Train the decoder (for single GPU use trainer.devices=1, for multi-gpu use trainer.devices=nGPUs)
 ```bash
-python3 tts_main.py fit -c configs/RADMMM_train_config.yaml -c configs/RADMMM_opensource_16khz_data_config.yaml -c configs/RADMMM_model_config.yaml --trainer.num_nodes=1 --trainer.devices=1
+python3 tts_main.py fit -c configs/RADMMM_train_config.yaml -c configs/RADMMM_opensource_data_config_phonemizerless.yaml -c configs/RADMMM_model_config.yaml --trainer.num_nodes=1 --trainer.devices=1
 ```
 
 2. Train the attribute prediction modules (for single GPU use trainer.devices=1, for multi-gpu use trainer.devices=nGPUs)
 ```bash
-python3 tts_main.py fit -c configs/RADMMM_f0model_config.yaml -c configs/RADMMM_energymodel_config.yaml -c configs/RADMMM_durationmodel_config.yaml -c configs/RADMMM_vpredmodel_config.yaml -c configs/RADMMM_train_config.yaml -c configs/RADMMM_opensource_16khz_data_config.yaml -c configs/RADMMM_model_config.yaml --trainer.num_nodes=1 --trainer.devices=1  --model.encoders_path=<decoder_path> --model.decoder_path=<decoder_path>
+python3 tts_main.py fit -c configs/RADMMM_f0model_config.yaml -c configs/RADMMM_energymodel_config.yaml -c configs/RADMMM_durationmodel_config.yaml -c configs/RADMMM_vpredmodel_config.yaml -c configs/RADMMM_train_config.yaml -c configs/RADMMM_opensource_data_config_phonemizerless.yaml -c configs/RADMMM_model_config.yaml --trainer.num_nodes=1 --trainer.devices=1  --model.encoders_path=<decoder_path> --model.decoder_path=<decoder_path>
 ```
 
 ## Inference
@@ -73,9 +73,8 @@ python tts_main.py predict -c $CONFIG_PATH --ckpt_path=$MODEL_PATH --model.predi
 ## Pretrained checkpoint(s)
 ### RADMMM (mel-spectogram synthesizer)
 
-[RADMMM decoder checkpoint](https://drive.google.com/file/d/1ZLFHY5iSMdK852UwF1RqFr7cY2ejzeOw/view?usp=sharing)  
-[RADMMM attribute predictor checkpoint](https://drive.google.com/file/d/1EduYNwgtRlezJt6RiXMLBBSSOpIbp2CT/view?usp=sharing)  
-[RADMMM config](https://drive.google.com/file/d/1c_dGA82k2Ow65P0vXwYwRTEipNdzTsTa/view?usp=sharing)  
+[RADMMM checkpoint](https://drive.google.com/file/d/1m-pAIeCBuT6yD77kIETqkAYYDtA_cbzs/view?usp=sharing)  
+[RADMMM config](https://drive.google.com/file/d/1sPFFy6aYufbseox5Rxwt-EjDbMogkUwP/view?usp=sharing)  
 
 ### Vocoder (HiFi-GAN - waveform synthesizer)
 
@@ -83,11 +82,10 @@ python tts_main.py predict -c $CONFIG_PATH --ckpt_path=$MODEL_PATH --model.predi
 [HiFi-GAN config](https://drive.google.com/file/d/1-eBTNfIh-LSstNirQawHW4jsI-t01jTU/view?usp=sharing). 
 
 ## Reference samples using pretrained model
-[Link](https://drive.google.com/drive/folders/1IIAJnihIOTFHirxj_4AYt2a6R1s3UN9A?usp=sharing)
+[Link](https://drive.google.com/drive/folders/1nORslyv1rB_wKPAqonTBwYuJwWMGxT2r?usp=sharing)
 
 ## Reference Samples and more information
 Please visit this [page](https://research.nvidia.com/labs/adlr/projects/radmmm) for samples related to models trained on the opensource dataset.
-
 
 ## Support
 rbadlani@nvidia.com
