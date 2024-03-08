@@ -251,12 +251,19 @@ class TextProcessing(object):
         if phoneme_dict == None:
             phoneme_dict = self.phonemedict
         else:
+            
             phoneme = phoneme_dict.lookup(word)
             if phoneme is None:
-                return word
+                return word 
             if type(phoneme) == list and len(phoneme) > 1:
-                phoneme = phoneme[0]
-            
+                if self.handle_phoneme_ambiguous == 'first':
+                    phoneme = phoneme[0]
+                elif self.handle_phoneme_ambiguous == 'random':
+                    phoneme = np.random.choice(phoneme)
+                elif self.handle_phoneme_ambiguous == 'ignore':
+                    return word
+                else:
+                    phoneme = phoneme[0]
             phoneme = "{" + ''.join(phoneme) + phoneme_suffix + "}"
             return phoneme
 
