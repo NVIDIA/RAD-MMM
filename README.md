@@ -67,7 +67,7 @@ VOCODER_CONFIG_PATH=<vocoder_config_path>
 INPUT_FILEPATH=model_inputs/resynthesis_prompts.json
 #INPUT_FILEPATH=model_inputs/language_transfer_prompts.json
 
-python tts_main.py predict -c $CONFIG_PATH --ckpt_path=$MODEL_PATH --model.predict_mode="tts" --data.inference_transcript=$INPUT_FILEPATH --model.prediction_output_dir=outdir --trainer.devices=1 --data.batch_size=1 --model.vocoder_checkpoint_path=$VOCODER_PATH --model.vocoder_config_path=$VOCODER_CONFIG_PATH --data.phonemizer_cfg='{"en_US": "assets/en_US_word_ipa_map.txt","de_DE": "assets/de_DE_word_ipa_map.txt","en_UK": "assets/en_UK_word_ipa_map.txt","es_CO": "assets/es_CO_word_ipa_map.txt","es_ES": "assets/es_ES_word_ipa_map.txt","fr_FR": "assets/fr_FR_word_ipa_map.txt","hi_HI": "assets/hi_HI_word_ipa_map.txt","pt_BR": "assets/pt_BR_word_ipa_map.txt","te_TE": "assets/te_TE_word_ipa_map.txt"}' --model.encoders_path=<decoder_path> --model.decoder_path=<decoder_path>
+python tts_main.py predict -c $CONFIG_PATH --ckpt_path=$MODEL_PATH --model.predict_mode="tts" --data.inference_transcript=$INPUT_FILEPATH --model.prediction_output_dir=outdir --trainer.devices=1 --data.batch_size=1 --model.vocoder_checkpoint_path=$VOCODER_PATH --model.vocoder_config_path=$VOCODER_CONFIG_PATH --data.phonemizer_cfg='{"en_US": "assets/en_US_word_ipa_map.txt","de_DE": "assets/de_DE_word_ipa_map.txt","en_UK": "assets/en_UK_word_ipa_map.txt","es_CO": "assets/es_CO_word_ipa_map.txt","es_ES": "assets/es_ES_word_ipa_map.txt","fr_FR": "assets/fr_FR_word_ipa_map.txt","hi_HI": "assets/hi_HI_word_ipa_map.txt","pt_BR": "assets/pt_BR_word_ipa_map.txt","te_TE": "assets/te_TE_word_ipa_map.txt", "es_MX": "assets/es_ES_word_ipa_map.txt"}' 
 ```
 
 ## Pretrained checkpoint(s)
