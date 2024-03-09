@@ -25,7 +25,7 @@ import numpy as np
 from collections import defaultdict
 from . import cleaners
 from .cleaners import Cleaner
-from .symbols import get_symbols
+from .symbols import get_symbols, phonemizer_diacritics
 from .grapheme_dictionary import Grapheme2PhonemeDictionary
 
 #########
@@ -360,6 +360,12 @@ class TextProcessing(object):
                     if np.random.uniform() < self.p_phoneme
                     else word[0])
                 for word in words]
+            if len(text_phoneme) > 1 and text_phoneme[-1] in phonemizer_diacritics:
+                text_phoneme[-2] = text_phoneme[-2][:-1]+text_phoneme[-1]+text_phoneme[-2][-1:]
+                del text_phoneme[-1]
+            if len(text_phoneme) > 1 and text_phoneme[0] in phonemizer_diacritics:
+                text_phoneme[1] = text_phoneme[1][:1]+text_phoneme[0]+text_phoneme[1][1:]
+                del text_phoneme[0]
             text_phoneme = ''.join(text_phoneme)
             text = text_phoneme
         elif self.handle_phoneme != '':
