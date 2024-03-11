@@ -28,6 +28,7 @@ multilingual-dataset/
 | Spanish (LATN)  | 7376          | 10          | https://www.caito.de/2019/01/03/the-m-ailabs-speech-dataset                                         | Karen Savage      |
 | Total           | 58698         | 70          |                                                                                                     |                   |
 
+
 2. Filelists are already present in `datasets/`
 
 
@@ -52,7 +53,7 @@ python3 tts_main.py fit -c configs/RADMMM_train_config.yaml -c configs/RADMMM_op
 
 2. Train the attribute prediction modules (for single GPU use trainer.devices=1, for multi-gpu use trainer.devices=nGPUs)
 ```bash
-python3 tts_main.py fit -c configs/RADMMM_f0model_config.yaml -c configs/RADMMM_energymodel_config.yaml -c configs/RADMMM_durationmodel_config.yaml -c configs/RADMMM_vpredmodel_config.yaml -c configs/RADMMM_train_config.yaml -c configs/RADMMM_opensource_data_config_phonemizerless.yaml -c configs/RADMMM_model_config.yaml --trainer.num_nodes=1 --trainer.devices=1  --model.encoders_path=<decoder_path> --model.decoder_path=<decoder_path>
+python3 tts_main.py fit -c configs/RADMMM_f0model_config.yaml -c configs/RADMMM_energymodel_config.yaml -c configs/RADMMM_durationmodel_config.yaml -c configs/RADMMM_vpredmodel_config.yaml -c configs/RADMMM_train_config.yaml -c configs/RADMMM_opensource_data_config_phonemizerless.yaml -c configs/RADMMM_model_config.yaml --trainer.num_nodes=1 --trainer.devices=1
 ```
 
 ## Inference
@@ -82,8 +83,8 @@ python tts_main.py predict -c $CONFIG_PATH --ckpt_path=$MODEL_PATH --model.predi
 ## Pretrained checkpoint(s)
 ### RADMMM (mel-spectogram synthesizer)
 
-[RADMMM checkpoint](https://drive.google.com/file/d/1m-pAIeCBuT6yD77kIETqkAYYDtA_cbzs/view?usp=sharing)  
-[RADMMM config](https://drive.google.com/file/d/1sPFFy6aYufbseox5Rxwt-EjDbMogkUwP/view?usp=sharing)  
+[RADMMM checkpoint](https://drive.google.com/file/d/1p8SEVHRlyLQpQnVP2Dc66RlqJVVRDCsJ/view?usp=sharing)  
+[RADMMM config](https://drive.google.com/file/d/1zOt9cQM9NqKFZFQ1N06gQpR10LFwtvQd/view?usp=sharing)  
 
 ### Vocoder (HiFi-GAN - waveform synthesizer)
 
