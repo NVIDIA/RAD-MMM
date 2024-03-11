@@ -347,7 +347,8 @@ class TTSModel(LightningModule):
                                                 txt_lens.lengths)
 
         # get durations
-        durations = self.duration_predictor.infer(txt_enc, duration_spk_vecs, txt_lens)
+        durations = self.duration_predictor.infer(txt_enc, duration_spk_vecs, txt_lens,
+                                                 accent_emb=accent_vecs)
         durations_int = torch.clamp(torch.round(durations), min=1)*txt_lens.mask.unsqueeze(1)
         durations_int = durations_int.long()
         
@@ -357,8 +358,8 @@ class TTSModel(LightningModule):
 
         # get all attributes
         out_lens = SequenceLength(durations_int[:,0].sum(1))
-        voiced_pred = torch.sigmoid(self.voiced_predictor.infer(context, f0_spk_vecs, out_lens)) > 0.5
-        f0_pred = self.f0_predictor.infer(context, f0_spk_vecs, out_lens, x_mean=f0_mean, x_std=f0_std) * voiced_pred
+        voiced_pred = torch.sigmoid(self.voiced_predictor.infer(context, f0_spk_vecs, out_lens, accent_emb=accent_vecs)) > 0.5
+        f0_pred = self.f0_predictor.infer(context, f0_spk_vecs, out_lens, x_mean=f0_mean, x_std=f0_std, accent_emb=accent_vecs) * voiced_pred
         
         # import pdb
         # pdb.set_trace()
@@ -374,7 +375,7 @@ class TTSModel(LightningModule):
             f0_pred = f0_pred.float()
             f0_pred[voiced_pred] = f0_pred[voiced_pred].float() * f0_std_exp[voiced_pred].float() + f0_mean_exp[voiced_pred].float()
             
-        energy_pred = self.energy_predictor.infer(context, energy_spk_vecs, out_lens)
+        energy_pred = self.energy_predictor.infer(context, energy_spk_vecs, out_lens, accent_emb=accent_vecs)
 
         # run through the decoder sampling
         output = self.sample_decoder(decoder_spk_vecs, txt_enc, sigma=1.0, dur=durations_int.squeeze(1), f0=f0_pred[:,0], energy_avg=energy_pred[:, 0], out_lens=out_lens.lengths, accent_vecs=accent_vecs)
@@ -689,9 +690,11 @@ class TTSModel(LightningModule):
             # pdb.set_trace()
             f0_outputs = self.f0_predictor(f0.unsqueeze(1),
                                            context.detach(),
-                                           spk_vecs.detach(), out_lens,
+                                           spk_vecs.detach(),
+                                           out_lens,
                                            f0_mean,
-                                           f0_std)
+                                           f0_std,
+                                           accent_vecs.detach())
             f0_mask = None
             if self.f0_loss_voiced_only:
                 f0_mask = voiced_mask.unsqueeze(1)
@@ -701,13 +704,15 @@ class TTSModel(LightningModule):
             # add energy transformation if applicable
             energy_outputs = self.energy_predictor(energy_avg.unsqueeze(1),
                                                    context.detach(),
-                                                   spk_vecs.detach(), out_lens)
+                                                   spk_vecs.detach(), out_lens,
+                                                   accent_emb=accent_vecs.detach())
             energy_loss = self.energy_predictor_loss(energy_outputs, in_lens, out_lens, self.global_step)
             loss_outputs.update(energy_loss)
         if self.voiced_predictor is not None:
             voiced_outputs = self.voiced_predictor(voiced_mask.unsqueeze(1),
                                            context.detach(),
-                                           spk_vecs.detach(), out_lens)
+                                           spk_vecs.detach(), out_lens,
+                                           accent_emb=accent_vecs.detach())
             voiced_loss = self.voiced_predictor_loss(voiced_outputs, in_lens, out_lens, self.global_step)
             loss_outputs.update(voiced_loss)
 
@@ -715,7 +720,8 @@ class TTSModel(LightningModule):
             duration_targets = attn.sum(2).detach()
             duration_outputs = self.duration_predictor(duration_targets,
                                            txt_enc.detach(),
-                                           spk_vecs.detach(), in_lens)
+                                           spk_vecs.detach(), in_lens,
+                                           accent_emb=accent_vecs.detach())
             duration_loss = self.duration_predictor_loss(duration_outputs, None, None, self.global_step, in_lens.mask.unsqueeze(1))
             loss_outputs.update(duration_loss)
 
@@ -784,9 +790,10 @@ class TTSModel(LightningModule):
         if self.f0_predictor is not None:
             f0_outputs = self.f0_predictor(f0.unsqueeze(1),
                                            context,
-                                           spk_vecs, out_lens,
+                                           spk_vecs.detach(), out_lens,
                                            f0_mean,
-                                           f0_std)
+                                           f0_std,
+                                           accent_emb=accent_vecs.detach())
             f0_mask = None
             
             if self.f0_loss_voiced_only:
@@ -801,7 +808,8 @@ class TTSModel(LightningModule):
         if self.energy_predictor is not None:
             energy_outputs = self.energy_predictor(energy_avg.unsqueeze(1),
                                            context,
-                                           spk_vecs, out_lens)
+                                           spk_vecs, out_lens,
+                                           accent_emb=accent_vecs.detach())
             energy_loss = self.energy_predictor_loss(energy_outputs, in_lens, out_lens, self.global_step)
             loss_outputs.update(energy_loss)
             output_dict['energy_outputs'] = energy_outputs
@@ -809,7 +817,8 @@ class TTSModel(LightningModule):
         if self.voiced_predictor is not None:
             voiced_outputs = self.voiced_predictor(voiced_mask.unsqueeze(1),
                                            context,
-                                           spk_vecs, out_lens)
+                                           spk_vecs, out_lens,
+                                           accent_emb=accent_vecs.detach())
             voiced_loss = self.voiced_predictor_loss(voiced_outputs, in_lens, out_lens, self.global_step)
             loss_outputs.update(voiced_loss)
             output_dict['voiced_outputs'] = voiced_outputs
@@ -818,7 +827,8 @@ class TTSModel(LightningModule):
             duration_targets = attn.sum(2).detach()
             duration_outputs = self.duration_predictor(duration_targets,
                                            txt_enc.detach(),
-                                           spk_vecs.detach(), in_lens)
+                                           spk_vecs.detach(), in_lens,
+                                           accent_emb=accent_vecs.detach())
             duration_loss = self.duration_predictor_loss(duration_outputs, None, None, self.global_step, in_lens.mask.unsqueeze(1))
             loss_outputs.update(duration_loss)
             output_dict['duration_outputs'] = duration_outputs

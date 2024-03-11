@@ -53,7 +53,7 @@ class BottleneckLayer(nn.Module):
 
 class AttributePredictor(nn.Module):
     def __init__(self, target_scale=1, target_offset=0, log_target=False,
-                normalize_target=False, normalization_type=None):
+                normalize_target=False, normalization_type=None,):
         super(AttributePredictor, self).__init__()
         self.target_scale = target_scale
         self.target_offset = target_offset
@@ -132,10 +132,10 @@ class AttributePredictor(nn.Module):
             x = (x - self.target_offset)/self.target_scale
         return x
 
-    def forward(self, x_target, text_enc, spk_emb, lens: SequenceLength):
+    def forward(self, x_target, text_enc, spk_emb, lens: SequenceLength, accent_emb=None):
         pass
 
-    def infer(self, text_enc, spk_emb, lens: SequenceLength):
+    def infer(self, text_enc, spk_emb, lens: SequenceLength, accent_emb=None):
         pass
 
 
@@ -144,16 +144,22 @@ class ConvLSTMLinearDAP(AttributePredictor):
                  n_backbone_layers=2, n_hidden=256, kernel_size=3,
                  p_dropout=0.25, target_scale=1, target_offset=0, log_target=False, lstm_type: Optional[str]='bilstm',
                  use_speaker_embedding=True,
+                 use_accent_embedding=False,
                  normalize_target=False,
                  normalization_type=None):
         super(ConvLSTMLinearDAP, self).__init__(target_scale, target_offset, log_target,
                                                 normalize_target, normalization_type)
+        
         self.use_speaker_embedding = bool(use_speaker_embedding)
+        self.use_accent_embedding = bool(use_accent_embedding)
         self.bottleneck_layer = BottleneckLayer(in_dim=in_dim,
                                                 reduction_factor=reduction_factor)
         backbone_in_dim = self.bottleneck_layer.out_dim
         if use_speaker_embedding:
             backbone_in_dim += n_speaker_dim
+
+        if use_accent_embedding:
+            backbone_in_dim += n_accent_dim
         
         self.feat_pred_fn = ConvLSTMLinear(in_dim=backbone_in_dim,
                                            out_dim=out_dim, n_layers=n_backbone_layers,
@@ -166,23 +172,28 @@ class ConvLSTMLinearDAP(AttributePredictor):
         self.normalization_type = normalization_type
 
     def forward(self, x_target, text_enc, spk_emb, lens: SequenceLength,
-                x_mean=None, x_std=None):
+                x_mean=None, x_std=None, accent_emb=None):
         if x_target is not None:
             x_target = self.tx_data(x_target, x_mean, x_std)
-
         
         # print(f'x_target={x_target}, x_mean={x_mean}, x_std={x_std}')
         
         txt_enc = self.bottleneck_layer(text_enc, lens.mask)
-        spk_emb_expanded = spk_emb[..., None].expand(-1, -1, text_enc.shape[2])
-        context = torch.cat((txt_enc, spk_emb_expanded), 1)
+        context = txt_enc
+        if self.use_speaker_embedding:
+            spk_emb_expanded = spk_emb[..., None].expand(-1, -1, text_enc.shape[2])
+            context = torch.cat((context, spk_emb_expanded), 1)
+        if self.use_accent_embedding:
+            accent_emb_expanded = accent_emb[..., None].expand(-1, -1, text_enc.shape[2])
+            context = torch.cat((context, accent_emb_expanded), 1)
+
         x_hat = self.feat_pred_fn(context, lens)
         outputs = {'x_hat': x_hat, 'x': x_target}
         return outputs
 
     def infer(self, text_enc, spk_emb, lens: SequenceLength,
-             x_mean=None, x_std=None):
-        res = self.forward(None, text_enc, spk_emb, lens)
+             x_mean=None, x_std=None, accent_emb=None):
+        res = self.forward(None, text_enc, spk_emb, lens, accent_emb=accent_emb)
         return self.inv_tx_data(res['x_hat'], x_mean, x_std)
 
 

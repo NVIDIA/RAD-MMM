@@ -3,6 +3,8 @@ model:
     class_path: attribute_predictors.ConvLSTMLinearDAP
     init_args:
       n_speaker_dim: 16
+      n_accent_dim: 8
+      use_accent_embedding: true
       in_dim: 520
       out_dim: 1
       reduction_factor: 16

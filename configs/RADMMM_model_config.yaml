@@ -64,12 +64,12 @@ model:
   weight_decay: 1.0e-06
   n_text_tokens: 426
   sigma: 1.0
-  iters_per_checkpoint: 3000
+  iters_per_checkpoint: 500
   seed: null
   unfreeze_modules: all
   binarization_start_iter: 20000
-  output_directory: /debug
+  output_directory: /home/dcg-adlr-rbadlani-output/github/radmmm/
   scale_mel: True
-  vocoder_config_path: vocoders/hifigan_vocoder/config_44khz_new.json
-  vocoder_checkpoint_path: vocoders/hifigan_vocoder/g_01224000
+  vocoder_config_path: vocoders/hifigan_vocoder/config_16khz.json
+  vocoder_checkpoint_path: vocoders/hifigan_vocoder/g_00072000
   p_estimate_ambiguous_phonemes: 0.0
