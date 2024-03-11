@@ -603,6 +603,7 @@ class TTSModel(LightningModule):
         for iter, wav in enumerate(audio_outputs):
             curr_fname = os.path.join(self.prediction_output_dir, "output_sample_%d_%s.wav" %(batch['idx'][iter], self.predict_mode))
             write_wav(curr_fname, self.sampling_rate, wav)
+        return curr_fname
 
     def on_fit_start(self):
         if self.global_rank == 0:

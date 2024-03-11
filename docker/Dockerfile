@@ -22,10 +22,10 @@ RUN apt-get update --fix-missing && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y libgl1 libglib2.0-0 ffmpeg libsndfile1 sox locales vim espeak
 RUN pip3 install yt-dlp setuptools
-RUN pip3 install Cython phonemizer einops tensorboardX numpy matplotlib pillow scipy tqdm scikit-learn h5py pyyaml tensorboard lmdb opencv-python diffusers transformers pytorch-lightning
+RUN pip3 install Cython phonemizer einops tensorboardX numpy matplotlib pillow scipy tqdm scikit-learn h5py pyyaml tensorboard lmdb opencv-python diffusers transformers pytorch-lightning=="2.0.2"
 RUN pip3 install soundfile audioread sox inflect unidecode natsort pandas jupyter tgt srt peakutils
 ENV PRAAT_VER 6309
-RUN wget http://www.fon.hum.uva.nl/praat/praat${PRAAT_VER}_linux64barren.tar.gz \
+RUN wget https://github.com/praat/praat/releases/download/v6.3.09/praat${PRAAT_VER}_linux64barren.tar.gz \
         && tar xzf praat${PRAAT_VER}_linux64barren.tar.gz -C /usr/bin \
         && rm praat${PRAAT_VER}_linux64barren.tar.gz
 RUN pip3 install praat-parselmouth

@@ -18,7 +18,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE.
-from pytorch_lightning.cli import LightningCLI
+from pytorch_lightning.cli import LightningCLI,ArgsType
 from tts_lightning_modules import TTSModel
 from data_modules import BaseAudioDataModule
 from jsonargparse import lazy_instance
@@ -59,6 +59,10 @@ class RADTTSLightningCLI(LightningCLI):
         parser.link_arguments("data.append_space_to_text", "model.append_space_to_text")
         parser.link_arguments("data.add_bos_eos_to_text", "model.add_bos_eos_to_text")
         parser.link_arguments("data.phonemizer_cfg", "model.phonemizer_cfg")
-        
 
-cli = RADTTSLightningCLI(TTSModel, BaseAudioDataModule, save_config_kwargs={"overwrite": True})
+
+def lcli(args: ArgsType = None):
+    cli = RADTTSLightningCLI(TTSModel, BaseAudioDataModule, save_config_kwargs={"overwrite": True},args=args)
+
+if __name__=="__main__":
+    lcli()

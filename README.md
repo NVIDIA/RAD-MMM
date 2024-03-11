@@ -17,7 +17,16 @@ In order to get started, please follow the steps below:
 multilingual-dataset/
 ```
 
-![data](visuals/radmmm_data_table.png)
+| Language        | Train Prompts | Val Prompts | Dataset Link                                                                                        | Speaker Name      |
+|-----------------|---------------|-------------|-----------------------------------------------------------------------------------------------------|-------------------|
+| English (US)    | 10000         | 10          | https://keithito.com/LJ-Speech-Dataset                                                              | LJ Speech         |
+| German (DE)     | 10000         | 10          | https://opendata.iisys.de/opendata/Datasets/HUI-Audio-Corpus-German/dataset_full/Bernd_Ungerer.zip  | Bernd Ungerer     |
+| French (FR)     | 10000         | 10          | https://www.caito.de/2019/01/03/the-m-ailabs-speech-dataset                                         | Nadine Eckert     |
+| Spanish (ES)    | 10000         | 10          | https://www.caito.de/2019/01/03/the-m-ailabs-speech-dataset                                         | Tux               |
+| Hindi (HI)      | 8237          | 10          | https://aclanthology.org/2020.lrec-1.789.pdf                                                        | Indic TTS         |
+| Portuguese (BR) | 3085          | 10          | https://github.com/Edresson/TTS-Portuguese-Corpus                                                   | Edresson Casanova |
+| Spanish (LATN)  | 7376          | 10          | https://www.caito.de/2019/01/03/the-m-ailabs-speech-dataset                                         | Karen Savage      |
+| Total           | 58698         | 70          |                                                                                                     |                   |
 
 2. Filelists are already present in `datasets/`
 

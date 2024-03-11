@@ -25,7 +25,7 @@ import numpy as np
 from collections import defaultdict
 from . import cleaners
 from .cleaners import Cleaner
-from .symbols import get_symbols
+from .symbols import get_symbols, phonemizer_diacritics
 from .grapheme_dictionary import Grapheme2PhonemeDictionary
 
 #########
@@ -36,7 +36,7 @@ from .grapheme_dictionary import Grapheme2PhonemeDictionary
 _curly_re = re.compile(r'(.*?)\{(.+?)\}(.*)')
 
 # Regular expression matching words and not words
-_words_re = re.compile(r"([a-zA-ZÀ-ž]+['][a-zA-ZÀ-ž]+|[a-zA-ZÀ-ž]+)|([{][^}]+[}]|[^a-zA-ZÀ-ž{}]+)")
+_words_re = re.compile(r"([a-zA-Z\u0900-\u097F]+['][a-zA-Z\u0900-\u097F]+|[a-zA-Z\u0900-\u097F]+)|([{][^}]+[}]|[^a-zA-Z\u0900-\u097F{}]+)")
 
 _phonemizer_language_map = {
     'hi_HI': 'hi', 
@@ -102,6 +102,7 @@ class TextProcessing(object):
             self.phonemizer_cfg = phonemizer_cfg
             self.phonemizer_backend_dict = {}
             for language, lang_phoneme_dict_path in phonemizer_cfg.items():
+                print("loading: ", lang_phoneme_dict_path)
                 self.phonemizer_backend_dict[language] = Grapheme2PhonemeDictionary(
                     lang_phoneme_dict_path, encoding=encoding,
                     split_token=dict_split_token,
@@ -245,17 +246,25 @@ class TextProcessing(object):
         return self.symbols_to_sequence(['@' + s for s in text.split()])
 
     def get_phoneme(self, word, phoneme_dict=None):
-        print(word)
-        print(phoneme_dict)
         phoneme_suffix = ''
 
         if phoneme_dict == None:
             phoneme_dict = self.phonemedict
         else:
+            
             phoneme = phoneme_dict.lookup(word)
             if phoneme is None:
                 return word 
-            phoneme = "{" + ' '.join(phoneme) + phoneme_suffix + "}"
+            if type(phoneme) == list and len(phoneme) > 1:
+                if self.handle_phoneme_ambiguous == 'first':
+                    phoneme = phoneme[0]
+                elif self.handle_phoneme_ambiguous == 'random':
+                    phoneme = np.random.choice(phoneme)
+                elif self.handle_phoneme_ambiguous == 'ignore':
+                    return word
+                else:
+                    phoneme = phoneme[0]
+            phoneme = "{" + ''.join(phoneme) + phoneme_suffix + "}"
             return phoneme
 
         if word.lower() in self.heteronyms:
@@ -294,7 +303,8 @@ class TextProcessing(object):
 
     def encode_text(self, text, return_all=False, language=None, is_phonemized=False):
         if not is_phonemized:
-            print(f'{text} is NOT phonemized...')
+            # print(f'{text} is NOT phonemized...')
+            # print(language)
             text_clean = self.clean_text(text)
             text = text_clean
             text_phoneme = ''
@@ -350,6 +360,12 @@ class TextProcessing(object):
                     if np.random.uniform() < self.p_phoneme
                     else word[0])
                 for word in words]
+            if len(text_phoneme) > 1 and text_phoneme[-1] in phonemizer_diacritics:
+                text_phoneme[-2] = text_phoneme[-2][:-1]+text_phoneme[-1]+text_phoneme[-2][-1:]
+                del text_phoneme[-1]
+            if len(text_phoneme) > 1 and text_phoneme[0] in phonemizer_diacritics:
+                text_phoneme[1] = text_phoneme[1][:1]+text_phoneme[0]+text_phoneme[1][1:]
+                del text_phoneme[0]
             text_phoneme = ''.join(text_phoneme)
             text = text_phoneme
         elif self.handle_phoneme != '':

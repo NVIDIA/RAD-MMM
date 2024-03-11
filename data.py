@@ -43,7 +43,6 @@ import json
 import numpy as np
 import lmdb
 import pickle as pkl
-from scripts.phonemize_text import phonemize_text
 import torch
 import torch.utils.data
 import torch.nn.functional as F
@@ -801,7 +800,10 @@ class TextOnlyData(torch.utils.data.Dataset):
                 speaker_stats_path=None,
                 f0_pred_type=None,
                 separator='|'):
-        self.load_dataset(transcript_path) # fills in self.data
+        if transcript_path != None:
+            self.load_dataset(transcript_path) # fills in self.data if transcript path is provided
+        else:
+            self.data = []
         self.speaker_id_map = speaker_id_map
         self.accent_id_map = accent_id_map
         self.combine_speaker_and_emotion = combine_speaker_and_emotion

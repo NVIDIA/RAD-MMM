@@ -1,0 +1,8 @@
+assets/*.txt
+__pycache__/*
+outdir/*
+*.pyc
+*/.ipynb_checkpoints/*
+.ipynb_checkpoints/*
+tutorials/out1/*
+tutorials/run1/*
