@@ -265,7 +265,6 @@ class TextProcessing(object):
                 else:
                     phoneme = phoneme[0]
             phoneme = "{" + ''.join(phoneme) + phoneme_suffix + "}"
-            print("word: '", word, "', mapped to phoneme: ", phoneme)
             return phoneme
 
         if word.lower() in self.heteronyms:
