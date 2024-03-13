@@ -1,1 +1,0 @@
-python3 train_tts.py fit -c configs/RADMMM_train_config.yaml -c configs/RADMMM_opensource_16khz_data_config.yaml -c configs/RADMMM_model_config.yaml --model.output_directory=/home/dcg-adlr-rbadlani-output/radmmm-ptl/debug30/ --checkpoint_callback.every_n_train_steps=2000 --trainer.num_nodes=1 --trainer.val_check_interval=10
