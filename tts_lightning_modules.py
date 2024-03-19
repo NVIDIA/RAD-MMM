@@ -108,7 +108,7 @@ class TTSModel(LightningModule):
             prepend_space_to_text=prepend_space_to_text,
             append_space_to_text=append_space_to_text,
             add_bos_eos_to_text=add_bos_eos_to_text,
-            phonemizer_cfg=phonemizer_cfg)
+            phonemizer_cfg=phonemizer_cfg, encoding="utf-8")
 
         self.predict_mode = predict_mode
         assert(predict_mode in {'tts', 'reconstruction'})
